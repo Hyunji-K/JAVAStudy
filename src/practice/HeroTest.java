@@ -12,6 +12,9 @@ public class HeroTest {
 		System.out.println(thanos.toStr());
 		System.out.println(thor.toStr());
 		System.out.println(groot.toStr());
+		
+		thor.punch(thanos);  // 토르가 타노스에게 펀치
+		System.out.println(thanos.toStr());
 	}
 
 }
@@ -28,5 +31,13 @@ class Hero {
 	//method
 	String toStr() {
 		return String.format("Hero { name: %s,  hp: %d }", name, hp);
+	}
+	
+	void punch(Hero enemy) {
+		System.out.printf("[%s]의 펀치!!",  name);
+		System.out.println();
+		System.out.printf("%s의 HP:  %d -> ", enemy.name, enemy.hp);
+		enemy.hp -= 10; 
+		System.out.println( enemy.hp);
 	}
 }
